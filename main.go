@@ -15,6 +15,7 @@ const PROMETHEUS_NAMESPACE = "pet_shop"
 
 const MAX_NUMBER_OF_PETS = 50
 
+//comentando o código para testar
 func recordMetrics() {
 	go func() {
 		for {
