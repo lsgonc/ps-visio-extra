@@ -28,6 +28,5 @@ jobs:
       uses: docker/build-push-action@v5.3.0
       with:
         push: true
-        tags:
-          lucasjjgg/ps-visio-extra:${{github.run_number}}
-          lucasjjgg/ps-visio-extra:latest
+        tags: lucasjjgg/ps-visio-extra:${{github.run_number}}
+
