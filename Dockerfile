@@ -1,4 +1,4 @@
-FROM golang:1.22.2 
+FROM golang:1.22.2-alpine as build
 
 WORKDIR /app
 
@@ -14,7 +14,12 @@ COPY main.go ./
 #builda a imagem
 RUN go build -v -o /usr/local/bin/app
 
+
+FROM alpine:3.19.1
+
+COPY --from=build /usr/local/bin/app /usr/local/bin/app
+
 EXPOSE 3000
 
 #roda o app
-CMD ["/usr/local/bin/app"]
+CMD ["app"]
